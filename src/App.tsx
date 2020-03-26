@@ -200,9 +200,9 @@ function App() {
 
       <div>
         <div>
-          Time to cure in seconds{" "}
+          Time to get cured (in seconds){" "}
           <Tooltip
-            overlay={`After set amount of time, every infected person will become "cured" - this means that it will not transmit the infection and cannot be infected anymore.`}
+            overlay={`Starting from the moment of infection, every person will become "cured" after this amount of time - which means that he will not transmit the infection and cannot be infected anymore.`}
           >
             <QuestionCircleOutlined />
           </Tooltip>
