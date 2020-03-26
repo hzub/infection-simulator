@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e5a7463853ee62660879c06fae8daea6",
+    "revision": "6a2a85162c296da90024dc4bf8e15cfd",
     "url": "/infection-simulator/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/infection-simulator/static/css/2.2fbe55bd.chunk.css"
   },
   {
-    "revision": "213214d0e7e7d1054080",
-    "url": "/infection-simulator/static/css/main.0c9423ec.chunk.css"
+    "revision": "f7012d58da10d937023a",
+    "url": "/infection-simulator/static/css/main.64476f27.chunk.css"
   },
   {
     "revision": "8180ac79ac2d796338c7",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/infection-simulator/static/js/2.16458e35.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "213214d0e7e7d1054080",
+    "revision": "f7012d58da10d937023a",
     "url": "/infection-simulator/static/js/main.9f4d6612.chunk.js"
   },
   {
