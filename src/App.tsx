@@ -248,24 +248,24 @@ function App() {
               <Row justify="center">
                 <Title>Infection & social distancing simulator</Title>
                 <Paragraph type="secondary">
-                  COVID-19 pandemic is no joke. Every day, people are dieing in
+                  COVID-19 pandemic is no joke. Every day, people are dying in
                   many countries across the world.{" "}
                   <strong>
-                    One of most countermeasures applied in almost every place is
-                    some form of social distancing, which results in reduced
-                    human interactions and prevention of virus spread.{" "}
+                    One of the most commonly applied countermeasures in almost
+                    every place is some form of social distancing, which results
+                    in reduced human interactions and decrease of virus spread.{" "}
                   </strong>
                   Social distancing takes many forms: voluntary staying at home
-                  or forced curfews. Still, it is the best form of infection
-                  prevention.
+                  or forced curfews. Still, it turns out to be the best form of
+                  infection prevention.
                 </Paragraph>
                 <Paragraph>
-                  This application below allows you to simulate a virtual
+                  The application below allows you to simulate a virtual
                   society, where certain portion of inhbitants is stationary
                   (isolated), while the rest is moving. Play with it a little
                   and see for yourself,{" "}
                   <strong>how important is staying in place</strong> - and how
-                  it affects virus spread.
+                  it affects the virus spread.
                 </Paragraph>
               </Row>
             </Col>
