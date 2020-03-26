@@ -242,9 +242,9 @@ function App() {
   return (
     <div>
       <Row justify="center" align="middle">
-        <Col span={20}>
+        <Col md={20} xs={24}>
           <Row justify="center">
-            <Col span={16}>
+            <Col md={16} xs={22}>
               <Row justify="center">
                 <Title>Infection & social distancing simulator</Title>
                 <Paragraph type="secondary">
@@ -308,7 +308,7 @@ function App() {
         </Col>
       </Row>
       <Row justify="center">
-        <Col span={20}>
+        <Col xs={22} md={20}>
           <Row gutter={16}>
             <Col className="wrap-controls">
               {controls}
@@ -316,8 +316,8 @@ function App() {
                 Predefined scenarios
               </Divider>
               {/* <Title level={3}>:</Title> */}
-              <Row gutter={[8, 16]}>
-                <Col span={12}>
+              <Row gutter={[8, 24]}>
+                <Col xs={24} md={12}>
                   <Paragraph>
                     Moderate population,{" "}
                     <Text className="intent-success">many isolated people</Text>
@@ -333,7 +333,7 @@ function App() {
                     Run scenario
                   </Button>
                 </Col>
-                <Col span={12}>
+                <Col xs={24} md={12}>
                   <Paragraph>
                     Moderate population,{" "}
                     <Text className="intent-danger">
@@ -353,14 +353,11 @@ function App() {
                 </Col>
               </Row>
             </Col>
-            <Col className="wrap-canvas" style={{ minWidth: 600 }}>
+            <Col className="wrap-canvas">
               <Row justify="center">
                 <Button
                   type="primary"
                   danger={loadedSimulationConfig !== simulationConfig}
-                  style={{
-                    width: simulationEnvironment.canvasWidth / 2
-                  }}
                   onClick={() => start()}
                 >
                   {!simulation

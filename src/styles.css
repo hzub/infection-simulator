@@ -47,6 +47,10 @@ canvas {
   flex: 0 0 616px;
 }
 
+.wrap-canvas button {
+  width: 100%;
+}
+
 .intent-success {
   color: limegreen;
   font-weight: bold;
@@ -59,10 +63,54 @@ canvas {
 
 .canvas-holder {
   position: relative;
+  max-width: 600px;
 }
 
 .canvas-line-tooltip {
   position: absolute;
   left: 150px;
   top: 493px;
+}
+
+@media screen and (max-width: 945px) {
+  .wrap-controls {
+    order: 2;
+  }
+
+  .wrap-canvas {
+    order: 1;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrap-canvas {
+    max-width: none;
+    flex: 0 0 auto !important;
+  }
+  .wrap-controls {
+    margin-top: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrap-canvas {
+    max-width: none;
+  }
+
+  canvas {
+    width: 480px !important;
+    height: 440px !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .wrap-canvas {
+    max-width: none;
+  }
+
+  canvas {
+    width: 300px !important;
+    height: 225px !important;
+  }
 }
