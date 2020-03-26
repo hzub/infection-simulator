@@ -180,7 +180,7 @@ function App() {
       <Divider />
       <div>
         <div>
-          Percent of stationary (isolating) people{" "}
+          Percent of stationary (self-isolating) people{" "}
           <Tooltip
             overlay={`This percentage of people will not move in your population. They can be "visited" by other persons, but will remain stationary.`}
           >
