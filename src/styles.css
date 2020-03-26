@@ -102,6 +102,10 @@ canvas {
     width: 480px !important;
     height: 440px !important;
   }
+
+  .canvas-line-tooltip {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 500px) {
