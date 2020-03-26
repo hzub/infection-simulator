@@ -52,7 +52,8 @@ const ValueSelector = ({
   field,
   max,
   min,
-  suffix
+  suffix,
+  readonly
 }: {
   max: number;
   min: number;
@@ -60,6 +61,7 @@ const ValueSelector = ({
   setSimulationConfig: (s: SimulationConfig) => void;
   field: keyof SimulationConfig;
   suffix?: string;
+  readonly?: boolean;
 }) => {
   return (
     <Row gutter={16}>
@@ -84,6 +86,7 @@ const ValueSelector = ({
           value={simulationConfig[field]}
           min={min}
           max={max}
+          readOnly={readonly}
           style={{ width: "100%" }}
           formatter={e => `${e}${suffix || ""}`}
           onChange={e => {
@@ -233,6 +236,7 @@ function App() {
           field="infectedDotsAtStart"
           simulationConfig={simulationConfig}
           setSimulationConfig={setSimulationConfig}
+          readonly
           suffix={` / ${simulationConfig.numberOfDots}`}
         />
       </div>
