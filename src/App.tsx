@@ -19,7 +19,32 @@ import {
 } from "antd";
 import { QuestionCircleOutlined } from "@ant-design/icons";
 
-const { Title, Paragraph } = Typography;
+const initialAppConfig: SimulationConfig = {
+  stationaryPercentAtStart: 95,
+  infectedDotsAtStart: 3,
+  timeToCure: 14,
+  numberOfDots: 200,
+  medicalCapacityPercent: 25
+};
+
+const scenarios: SimulationConfig[] = [
+  {
+    stationaryPercentAtStart: 95,
+    infectedDotsAtStart: 3,
+    timeToCure: 14,
+    numberOfDots: 200,
+    medicalCapacityPercent: 25
+  },
+  {
+    stationaryPercentAtStart: 5,
+    infectedDotsAtStart: 3,
+    timeToCure: 14,
+    numberOfDots: 200,
+    medicalCapacityPercent: 25
+  }
+];
+
+const { Title, Paragraph, Text } = Typography;
 
 const ValueSelector = ({
   simulationConfig,
@@ -91,27 +116,29 @@ function App() {
     SimulationConfig
   >();
 
-  const [simulationConfig, setSimulationConfig] = useState<SimulationConfig>({
-    stationaryPercentAtStart: 60,
-    infectedDotsAtStart: 10,
-    timeToCure: 14,
-    numberOfDots: 100,
-    medicalCapacityPercent: 25
-  });
+  const [simulationConfig, setSimulationConfig] = useState<SimulationConfig>(
+    initialAppConfig
+  );
 
-  const start = React.useCallback(() => {
-    if (simulation) {
-      simulation.stop();
-    }
-    const newSimulation = createSimulation(
-      { ...simulationEnvironment },
-      { ...simulationConfig }
-    );
-    setLoadedSimulationConfig(simulationConfig);
-    setSimulation(newSimulation);
+  const start = React.useCallback(
+    (config?: SimulationConfig) => {
+      if (simulation) {
+        simulation.stop();
+      }
+      const newSimulation = createSimulation(
+        { ...simulationEnvironment },
+        { ...(config || simulationConfig) }
+      );
+      if (config) {
+        setSimulationConfig(config);
+      }
+      setLoadedSimulationConfig(config || simulationConfig);
+      setSimulation(newSimulation);
 
-    newSimulation.start();
-  }, [simulation, simulationConfig, simulationEnvironment]);
+      newSimulation.start();
+    },
+    [simulation, simulationConfig, simulationEnvironment]
+  );
 
   const updateState = React.useCallback(() => {
     if (simulation) {
@@ -129,8 +156,9 @@ function App() {
   }, [updateState]);
 
   useEffect(() => {
-    // start();
-  }, [simulation]);
+    start();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const controls = (
     <>
@@ -218,14 +246,26 @@ function App() {
           <Row justify="center">
             <Col span={16}>
               <Row justify="center">
-                <Title>Social Distancing Simulator</Title>
+                <Title>Infection & social distancing simulator</Title>
                 <Paragraph type="secondary">
-                  Ant Design, a design language for background applications, is
-                  refined by Ant UED Team. Ant Design, a design language for
-                  background applications, is refined by Ant UED Team. Ant
-                  Design, a design language for background applications, is
-                  refined by Ant UED Team. Ant Design, a design language for
-                  background applications, is refined by Ant UED Team.
+                  COVID-19 pandemic is no joke. Every day, people are dieing in
+                  many countries across the world.{" "}
+                  <strong>
+                    One of most countermeasures applied in almost every place is
+                    some form of social distancing, which results in reduced
+                    human interactions and prevention of virus spread.{" "}
+                  </strong>
+                  Social distancing takes many forms: voluntary staying at home
+                  or forced curfews. Still, it is the best form of infection
+                  prevention.
+                </Paragraph>
+                <Paragraph>
+                  This application below allows you to simulate a virtual
+                  society, where certain portion of inhbitants is stationary
+                  (isolated), while the rest is moving. Play with it a little
+                  and see for yourself,{" "}
+                  <strong>how important is staying in place</strong> - and how
+                  it affects virus spread.
                 </Paragraph>
               </Row>
             </Col>
@@ -270,7 +310,49 @@ function App() {
       <Row justify="center">
         <Col span={20}>
           <Row gutter={16}>
-            <Col className="wrap-controls">{controls}</Col>
+            <Col className="wrap-controls">
+              {controls}
+              <Divider type="horizontal" orientation="left">
+                Predefined scenarios
+              </Divider>
+              {/* <Title level={3}>:</Title> */}
+              <Row gutter={[8, 16]}>
+                <Col span={12}>
+                  <Paragraph>
+                    Moderate population,{" "}
+                    <Text className="intent-success">many isolated people</Text>
+                    , low initial infection.{" "}
+                  </Paragraph>
+                  <Paragraph>
+                    <strong>
+                      Result: <Text className="intent-success">low strain</Text>{" "}
+                      on medical capacity.
+                    </strong>
+                  </Paragraph>
+                  <Button type="primary" onClick={() => start(scenarios[0])}>
+                    Run scenario
+                  </Button>
+                </Col>
+                <Col span={12}>
+                  <Paragraph>
+                    Moderate population,{" "}
+                    <Text className="intent-danger">
+                      low number of isolated people
+                    </Text>
+                    , low initial infection.{" "}
+                  </Paragraph>
+                  <Paragraph>
+                    <strong>
+                      Result: <Text className="intent-danger">high strain</Text>{" "}
+                      on medical capacity.
+                    </strong>
+                  </Paragraph>
+                  <Button type="primary" onClick={() => start(scenarios[1])}>
+                    Run scenario
+                  </Button>
+                </Col>
+              </Row>
+            </Col>
             <Col className="wrap-canvas" style={{ minWidth: 600 }}>
               <Row justify="center">
                 <Button
@@ -279,16 +361,21 @@ function App() {
                   style={{
                     width: simulationEnvironment.canvasWidth / 2
                   }}
-                  onClick={start}
+                  onClick={() => start()}
                 >
                   {!simulation
                     ? "Start simulation"
                     : loadedSimulationConfig === simulationConfig
-                    ? "Restart simulation"
+                    ? "Restart simulation using current settings"
                     : "Apply new settings and restart simulation"}
                 </Button>
               </Row>
-              <Row justify="center">
+              <Row justify="center" className="canvas-holder">
+                <div className="canvas-line-tooltip">
+                  <Tooltip overlay="This line marks hypothetical limit of the hospitals’ ability to cure people">
+                    <QuestionCircleOutlined style={{ fontSize: "12px" }} />
+                  </Tooltip>
+                </div>
                 <canvas
                   id="canvas"
                   style={{
@@ -299,6 +386,24 @@ function App() {
                       2
                   }}
                 />
+              </Row>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+      <br />
+      <br />
+      <Row justify="center" align="middle">
+        <Col span={20}>
+          <Row justify="center">
+            <Col span={16}>
+              <Row justify="center">
+                <Paragraph>
+                  &copy;2020 Hubert Zub. Licensed under MIT License.{" "}
+                  <a href="https://github.com/hzub/infection-simulator/">
+                    Repository
+                  </a>
+                </Paragraph>
               </Row>
             </Col>
           </Row>

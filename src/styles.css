@@ -7,6 +7,7 @@ body {
 
 body {
   margin-top: 16px;
+  margin-bottom: 64px;
 }
 
 canvas {
@@ -44,4 +45,24 @@ canvas {
 
 .wrap-canvas {
   flex: 0 0 616px;
+}
+
+.intent-success {
+  color: limegreen;
+  font-weight: bold;
+}
+
+.intent-danger {
+  color: orangered;
+  font-weight: bold;
+}
+
+.canvas-holder {
+  position: relative;
+}
+
+.canvas-line-tooltip {
+  position: absolute;
+  left: 150px;
+  top: 493px;
 }
