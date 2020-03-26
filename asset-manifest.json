@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/infection-simulator/static/css/main.64476f27.chunk.css",
-    "main.js": "/infection-simulator/static/js/main.9f4d6612.chunk.js",
-    "main.js.map": "/infection-simulator/static/js/main.9f4d6612.chunk.js.map",
+    "main.js": "/infection-simulator/static/js/main.8202ae2b.chunk.js",
+    "main.js.map": "/infection-simulator/static/js/main.8202ae2b.chunk.js.map",
     "runtime-main.js": "/infection-simulator/static/js/runtime-main.49a5a898.js",
     "runtime-main.js.map": "/infection-simulator/static/js/runtime-main.49a5a898.js.map",
     "static/css/2.2fbe55bd.chunk.css": "/infection-simulator/static/css/2.2fbe55bd.chunk.css",
     "static/js/2.16458e35.chunk.js": "/infection-simulator/static/js/2.16458e35.chunk.js",
     "static/js/2.16458e35.chunk.js.map": "/infection-simulator/static/js/2.16458e35.chunk.js.map",
     "index.html": "/infection-simulator/index.html",
-    "precache-manifest.7318b7c446620b506828417ac8b93d45.js": "/infection-simulator/precache-manifest.7318b7c446620b506828417ac8b93d45.js",
+    "precache-manifest.731d3bdb51e9ea055e94364caacb6546.js": "/infection-simulator/precache-manifest.731d3bdb51e9ea055e94364caacb6546.js",
     "service-worker.js": "/infection-simulator/service-worker.js",
     "static/css/2.2fbe55bd.chunk.css.map": "/infection-simulator/static/css/2.2fbe55bd.chunk.css.map",
     "static/css/main.64476f27.chunk.css.map": "/infection-simulator/static/css/main.64476f27.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.2fbe55bd.chunk.css",
     "static/js/2.16458e35.chunk.js",
     "static/css/main.64476f27.chunk.css",
-    "static/js/main.9f4d6612.chunk.js"
+    "static/js/main.8202ae2b.chunk.js"
   ]
 }
