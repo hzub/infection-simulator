@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/infection-simulator/precache-manifest.ea98d51bdc0210061ded67e6735412b7.js"
+  "/infection-simulator/precache-manifest.db217a66027f918b1f69f22bc495959b.js"
 );
 
 self.addEventListener('message', (event) => {
