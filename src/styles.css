@@ -52,12 +52,12 @@ canvas {
 }
 
 .intent-success {
-  color: limegreen;
+  color: #368436;
   font-weight: bold;
 }
 
 .intent-danger {
-  color: orangered;
+  color: #882907;
   font-weight: bold;
 }
 

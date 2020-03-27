@@ -271,6 +271,27 @@ function App() {
                   <strong>how important is staying in place</strong> - and how
                   it affects the virus spread.
                 </Paragraph>
+                <Row gutter={[16, 8]}>
+                  <Col>
+                    <Button onClick={() => start(scenarios[0])}>
+                      <span>
+                        Run scenario with{" "}
+                        <span className="intent-success">high</span> social
+                        distancing
+                      </span>
+                    </Button>
+                  </Col>
+                  <Col>
+                    <Button onClick={() => start(scenarios[1])}>
+                      <span>
+                        Run scenario with{" "}
+                        <span className="intent-danger">low</span> social
+                        distancing
+                      </span>
+                    </Button>
+                  </Col>
+                </Row>
+                <Divider />
               </Row>
             </Col>
           </Row>
@@ -316,10 +337,10 @@ function App() {
           <Row gutter={16}>
             <Col className="wrap-controls">
               {controls}
-              <Divider type="horizontal" orientation="left">
+              {/* Hidden in favor of top scenarios */}
+              {/* <Divider type="horizontal" orientation="left">
                 Predefined scenarios
               </Divider>
-              {/* <Title level={3}>:</Title> */}
               <Row gutter={[8, 24]}>
                 <Col xs={24} md={12}>
                   <Paragraph>
@@ -355,7 +376,7 @@ function App() {
                     Run scenario
                   </Button>
                 </Col>
-              </Row>
+              </Row> */}
             </Col>
             <Col className="wrap-canvas">
               <Row justify="center">
@@ -397,6 +418,7 @@ function App() {
       <Row justify="center" align="middle">
         <Col span={20}>
           <Row justify="center">
+            <Divider />
             <Col span={16}>
               <Row justify="center">
                 <Paragraph>
