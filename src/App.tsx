@@ -266,8 +266,14 @@ function App() {
                 <Paragraph>
                   The application below allows you to simulate a virtual
                   society, where certain portion of inhbitants is stationary
-                  (isolated), while the rest is moving. Play with it a little
-                  and see for yourself,{" "}
+                  (isolated), while the rest is moving. Each dot is a "person"
+                  that might be infected or not. An infected person will
+                  transmit the disease upon "bumping" into other healthy person.
+                  People are getting better with time, which means they can't be
+                  infected anymore after some time.
+                </Paragraph>
+                <Paragraph>
+                  Play with it a little and see for yourself,{" "}
                   <strong>how important is staying in place</strong> - and how
                   it affects the virus spread.
                 </Paragraph>
