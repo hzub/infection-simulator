@@ -44,7 +44,7 @@ const scenarios: SimulationConfig[] = [
   }
 ];
 
-const { Title, Paragraph, Text } = Typography;
+const { Title, Paragraph } = Typography;
 
 const ValueSelector = ({
   simulationConfig,
