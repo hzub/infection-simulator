@@ -15,7 +15,7 @@
     "antd": "^4.0.4",
     "apexcharts": "^3.17.0",
     "gh-pages": "^2.2.0",
-    "immer": "^6.0.2",
+    "immer": "^9.0.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
